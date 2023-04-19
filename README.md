@@ -20,7 +20,7 @@ $diverService = \Cje\Storage\DriverService::getInstance(\Cje\Storage\bases\Stora
     'fullPath' => 'test',
     'isThumb' => true,
     'callBack' => function ($result, $file, $driver) {
-        $result->url = $result->url . '?apistyle=222'
+        $result->url = $result->url . '?apistyle=222';
         return $result;
     }
 ]);

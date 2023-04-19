@@ -69,7 +69,7 @@ class LocalDriver extends BaseDriver
     protected function createPath($file, $thumb = false)
     {
         $saveTo = $this->getFullPath($file, $thumb);
-        $accessUrl = $this->domain . '/' . $saveTo;
+        $accessUrl = rtrim($this->domain, '/') . '/' . $saveTo;
         $saveTo = rtrim($this->rootPath, '/') . '/' . $saveTo;
         $saveDir = dirname($saveTo);
         if (!make_dir($saveDir)) {

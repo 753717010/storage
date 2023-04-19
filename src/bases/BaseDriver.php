@@ -64,10 +64,19 @@ abstract class BaseDriver implements DriverInterface
             . ltrim($file, '/');
     }
 
+    /**
+     * 上传图片
+     * @param $localFile
+     * @param $file
+     * @return Result
+     */
     public function saveFile($localFile, $file)
     {
         $result = $this->upload($localFile, $file);
-        return call_user_func_array($this->urlCallback, [$result, $file, $this]);
+        if (is_callable($this->urlCallback)) {
+            $result = call_user_func_array($this->urlCallback, [$result, $file, $this]);
+        }
+        return $result;
     }
 
     abstract public function upload($localFile, $file);
