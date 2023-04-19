@@ -1,0 +1,25 @@
+{
+    "name": "cje/storage",
+    "description": "集成了部分存储服务",
+    "type": "library",
+    "require": {
+        "php": ">=7.2.0",
+        "aliyuncs/oss-sdk-php": "~2.0",
+        "qcloud/cos-sdk-v5": "~1.0",
+        "qiniu/php-sdk": "~7.0",
+        "kosinix/grafika": "~2.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cje\\Storage\\": "src/"
+        },
+        "files": ["src/bases/functions.php"]
+    },
+    "authors": [
+        {
+            "name": "cheng-jien",
+            "email": "753717010@qq.com"
+        }
+    ]
+}
